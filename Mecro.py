@@ -61,7 +61,7 @@ async def main():
         await calendarSetting.locator('input[title="KTX"]').click()
         reservation = True
         while(reservation):
-            await asyncio.sleep(5)
+            await asyncio.sleep(1.5)
             await calendarSetting.locator('select[title="출발일시 : 년도"]').select_option(year)
             await calendarSetting.locator('select[title="출발일시 : 월"]').select_option(month)
             await calendarSetting.locator('select[title="출발일시 : 일"]').select_option(day)

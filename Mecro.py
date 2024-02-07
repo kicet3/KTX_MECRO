@@ -84,19 +84,19 @@ async def main():
                     if reservationTimeHour>=wantStartTimeHour and reservationTimeHour<wantEndTimeHour:
                         nowTime = datetime.now()
                         if(await nomalSeat.is_visible()):
-                            td[5].locator('img[alt="예약하기"]').click()
+                            await td[5].locator('img[alt="예약하기"]').click()
                             await send_discord_message(int(discordInfo["channelId"]), '현재 시간'+ nowTime.strftime("%Y-%m-%d %H:%M:%S")+ (await td[2].inner_text()).replace('\n',' ')+' 출발 예매 완료 \n결제를 진행해주세요')
                             print("예약완료")
                             reservation = False
                             break
                         elif(await standSeat.is_visible()):
-                            td[7].locator('img[alt="예약하기"]').click()
+                            await td[7].locator('img[alt="예약하기"]').click()
                             await send_discord_message(int(discordInfo["channelId"]), '현재 시간'+ nowTime.strftime("%Y-%m-%d %H:%M:%S")+ (await td[2].inner_text()).replace('\n',' ')+' 출발 예매 완료 \n결제를 진행해주세요')
                             print("예약완료")
                             reservation = False
                             break
                         elif(await reservationSeat.is_visible()):
-                            td[9].locator('img[alt="예약하기"]').click()
+                            await td[9].locator('img[alt="예약하기"]').click()
                             await send_discord_message(int(discordInfo["channelId"]), '현재 시간'+ nowTime.strftime("%Y-%m-%d %H:%M:%S")+ (await td[2].inner_text()).replace('\n',' ')+' 출발 예매 완료 \n결제를 진행해주세요')
                             print("예약완료")
                             reservation = False
